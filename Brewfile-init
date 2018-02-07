@@ -1,5 +1,0 @@
-brew "pkg-config"
-brew "libyaml"
-brew "openssl"
-brew "python"
-brew "ansible"

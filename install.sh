@@ -8,7 +8,7 @@ else
 fi
 
 if [ ! -f /usr/local/bin/ansible ]; then
-  brew bundle --file=Brewfile-init
+  brew install pkg-config libyaml openssl python ansible
   brew list
 else
   echo "Ansible is already installed."
