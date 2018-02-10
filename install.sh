@@ -1,8 +1,8 @@
 #!/bin/sh
 
-finder=`defaults read com.apple.finder AppleShowAllFiles`
+finder=$(defaults read com.apple.finder AppleShowAllFiles)
 
-if [ ! $? = 0 ] || [ $finder == false ]; then
+if [ ! $? == 0 ] || [ $finder == false ]; then
   defaults write com.apple.finder AppleShowAllFiles true
   killall Finder
 else
