@@ -2,7 +2,7 @@
 
 finder=`defaults read com.apple.finder AppleShowAllFiles`
 
-if [ ! $? = 0 ]; then
+if [ ! $? = 0 ] || [ $finder == false ]; then
   defaults write com.apple.finder AppleShowAllFiles true
   killall Finder
 else
