@@ -1,0 +1,23 @@
+- hosts: localhost
+  connection: local
+  tasks:
+  - name: homebrew | update
+    command: brew update
+  - name: homebrew | outdated
+    command: brew outdated
+    register: homebrew
+  - debug: var=homebrew.stdout_lines
+  - name: brewcask | outdated
+    command: brew cask outdated
+    register: brewcask
+  - debug: var=brewcask.stdout_lines
+  - name: mas | outdated
+    command: mas outdated
+    register: macas
+  - debug: var=macas.stdout_lines
+  - name: homebrew | upgrade
+    command: brew upgrade
+  - name: brewfile | install
+    command: brew bundle
+    register: brewfile
+  - debug: var=brewfile.stdout_lines

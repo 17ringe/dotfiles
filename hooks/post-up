@@ -3,6 +3,9 @@
 array=(
   "package.json"
   "composer.json"
+  "playbook.yml"
+  "hosts"
+  "Brewfile"
 )
 
 for item in ${array[@]}; do
