@@ -1,11 +1,12 @@
 #!/bin/sh
 
-if [ -f $HOME/.package.json ]; then
-  mv $HOME/.package.json $HOME/package.json
-  echo "Installation of package.json"
-fi
+array=(
+  "package.json"
+  "composer.json"
+)
 
-if [ -f $HOME/.composer.json ]; then
-  mv $HOME/.composer.json $HOME/composer.json
-  echo "Installation of package.json"
-fi
+for item in ${array[@]}; do
+  if [ -f $HOME/.$item ]; then
+    mv $HOME/.$item $HOME/$item
+  fi
+done
