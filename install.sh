@@ -22,3 +22,12 @@ if [ ! -f /usr/local/bin/ansible ]; then
 else
   echo "Ansible is already installed."
 fi
+
+if [ ! -f /usr/local/bin/rcup ]; then
+  brew tap thoughtbot/formulae
+  brew install rcm
+  chmod +x ./hooks/post-up
+  env RCRC=$HOME/.dotfiles/rcrc rcup
+else
+  echo "RCM is already installed."
+fi
