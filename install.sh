@@ -32,3 +32,37 @@ if [ ! -f /usr/local/bin/rcup ]; then
 else
   echo "RCM is already installed."
 fi
+
+if [ ! -f ~/.anyenv/bin/anyenv ]; then
+  git clone https://github.com/riywo/anyenv ~/.anyenv
+  mkdir ~/.anyenv/plugins
+  git clone https://github.com/znz/anyenv-update ~/.anyenv/plugins/anyenv-update
+  source ~/.bash_profile
+  anyenv update
+else
+  echo "Anyenv is already installed."
+fi
+
+if [ ! -f ~/.anyenv/envs/rbenv/bin/rbenv ]; then
+  anyenv install rbenv
+  source ~/.bash_profile
+  rbenv install 2.4.1
+  rbenv global 2.4.1
+  rbenv rehash
+  rbenv versions
+  ruby -v
+else
+  echo "Rbenv is already installed."
+fi
+
+if [ ! -f ~/.anyenv/envs/ndenv/bin/ndenv ]; then
+  anyenv install ndenv
+  source ~/.bash_profile
+  ndenv install v8.9.4
+  ndenv global v8.9.4
+  ndenv rehash
+  ndenv versions
+  node -v
+else
+  echo "Ndenv is already installed."
+fi
