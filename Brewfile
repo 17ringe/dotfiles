@@ -20,6 +20,7 @@ cask "brackets"
 
 brew "mas"
 mas "TCleaner", id: 952478594
+mas "The Unarchiver", id: 425424353
 mas "Hour", id: 569089415
 mas "Airmail 3", id: 918858936
 mas "LINE", id: 539883307
