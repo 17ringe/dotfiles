@@ -19,6 +19,7 @@ fi
 if [ ! -f /usr/local/bin/ansible ]; then
   brew install pkg-config libyaml openssl python ansible
   brew list
+  ansible-galaxy install pipersniper.macos_installer
 else
   echo "Ansible is already installed."
 fi
