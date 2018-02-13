@@ -33,6 +33,14 @@
         installed_name: "no_path",
         state: "present"
       }
+      - {
+        name: "StartNinja",
+        url: "https://www.macupdate.com/download/41692/StartNinjaInstaller.dmg",
+        force: false,
+        installed_name: "no_path",
+        state: "present"
+      }
+
   pre_tasks:
   - name: Install .dmgs
     get_url:
