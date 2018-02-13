@@ -1,23 +1,5 @@
 - hosts: localhost
   connection: local
-  vars:
-    dmg_path: "{{ansible_env.HOME}}/Downloads"
-    dmgs:
-      - {
-        name: "Franz",
-        url: "https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.14/franz-5.0.0-beta.14.dmg",
-        force: false,
-        installed_name: "no_path",
-        state: "present"
-      }
-  pre_tasks:
-  - name: Install .dmgs
-    get_url:
-      url: "{{ item.url }}"
-      dest: "{{ dmg_path }}/{{ item.name }}.dmg"
-    with_items: "{{ dmgs }}"
-  roles:
-    - role: pipersniper.macos_installer
 
   tasks:
   - name: homebrew | update
@@ -40,3 +22,22 @@
     command: brew bundle
     register: brewfile
   - debug: var=brewfile.stdout_lines
+
+  vars:
+    dmg_path: "{{ansible_env.HOME}}/Downloads"
+    dmgs:
+      - {
+        name: "Franz",
+        url: "https://github.com/meetfranz/franz/releases/download/v5.0.0-beta.14/franz-5.0.0-beta.14.dmg",
+        force: false,
+        installed_name: "no_path",
+        state: "present"
+      }
+  pre_tasks:
+  - name: Install .dmgs
+    get_url:
+      url: "{{ item.url }}"
+      dest: "{{ dmg_path }}/{{ item.name }}.dmg"
+    with_items: "{{ dmgs }}"
+  roles:
+    - role: pipersniper.macos_installer
