@@ -3,7 +3,6 @@ brew "ansible"
 brew "mas"
 brew "git"
 
-tap "caskroom/cask"
 cask "insomniax"
 cask "adium"
 cask "alfred"
@@ -16,7 +15,6 @@ cask "waterfox"
 cask "android-platform-tools"
 cask "brackets"
 
-brew "mas"
 mas "TCleaner", id: 952478594
 mas "The Unarchiver", id: 425424353
 mas "Hour", id: 569089415
