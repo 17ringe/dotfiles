@@ -26,7 +26,7 @@ fi
 if [ ! -f /usr/local/bin/rcup ]; then
   brew tap thoughtbot/formulae
   brew install rcm
-  chmod +x ./hooks/post-up
+  chmod -R +x ./hooks/post-up
   env RCRC=~/.dotfiles/rcrc rcup
 else
   echo "RCM is already installed."
