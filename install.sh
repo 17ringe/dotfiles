@@ -16,7 +16,7 @@ else
 fi
 
 if [ ! -f /usr/local/bin/ansible ]; then
-  brew install pkg-config ansible mas
+  brew install ansible mas
   brew cask install insomniax
   ansible-galaxy install pipersniper.macos_installer
 else
