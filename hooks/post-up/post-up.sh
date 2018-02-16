@@ -6,6 +6,7 @@ array=(
   "playbook.yml"
   "hosts"
   "Brewfile"
+  "Gemfile"
 )
 
 for item in ${array[@]}; do

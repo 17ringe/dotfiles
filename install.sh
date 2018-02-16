@@ -47,6 +47,7 @@ if [ ! -f ~/.anyenv/envs/rbenv/bin/rbenv ]; then
   rbenv install 2.4.1
   rbenv global 2.4.1
   rbenv rehash
+  gem install bundler
 else
   echo "Rbenv is already installed."
 fi
